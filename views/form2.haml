@@ -1,0 +1,20 @@
+#editar
+	%h2 Editar Contacto
+	%p
+		%a{:href => '/'} Regresar al inicio
+	%form{:method => 'post'}
+		%input{:type => 'hidden', :name => 'id', :value => "#{@contact[:id]}"}
+
+		%label{:for => 'nombre', :class => 'login-lbl'} Nombre
+		%input{:type => 'text', :name => 'nombre', :id => 'nombre', :value => "#{@contact[:nombre]}", :class => 'login-box', :autofocus => ''}
+
+		%label{:for => 'apellido', :class => 'login-lbl'} Apellido
+		%input{:type => 'text', :name => 'apellido', :id => 'apellido', :value => "#{@contact[:apellido]}", :class => 'login-box'}
+
+		%label{:for => 'telefono', :class => 'login-lbl'} Telefono
+		%input{:type => 'text', :name => 'telefono', :id => 'telefono', :value => "#{@contact[:telefono]}", :class => 'login-box'}
+
+		%label{:for => 'direccion', :class => 'login-lbl'} Direccion
+		%input{:type => 'text', :name => 'direccion', :id => 'direccion', :value => "#{@contact[:direccion]}", :class => 'login-box'}
+
+		%input{:type => 'submit', :value => 'Agregar', :class => 'login-btn'}

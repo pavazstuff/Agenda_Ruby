@@ -1,0 +1,18 @@
+#nuevo
+	%h2 Nuevo Contacto
+	%p
+		%a{:href => '/'} Regresar al inicio
+	%form{:method => 'post'}
+		%label{:for => 'nombre', :class => 'login-lbl'} Nombre
+		%input{:type => 'text', :name => 'nombre', :id => 'nombre', :class => 'login-box', :autofocus => ''}
+
+		%label{:for => 'apellido', :class => 'login-lbl'} Apellido
+		%input{:type => 'text', :name => 'apellido', :id => 'apellido', :class => 'login-box'}
+
+		%label{:for => 'telefono', :class => 'login-lbl'} Telefono
+		%input{:type => 'text', :name => 'telefono', :id => 'telefono', :class => 'login-box'}
+
+		%label{:for => 'direccion', :class => 'login-lbl'} Direccion
+		%input{:type => 'text', :name => 'direccion', :id => 'direccion', :class => 'login-box'}
+
+		%input{:type => 'submit', :value => 'Agregar', :class => 'login-btn'}

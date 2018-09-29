@@ -1,0 +1,42 @@
+- if @by == "ASC" then alt = "DESC" else alt = "ASC" end
+#contacts
+
+	%h2 Contactos
+	%form{:action => '/search', :class => 'form-q'}
+		.nav
+			.item
+				%a{:href => '/new', :class => 'nav-btn'} Nuevo
+			.item2
+				%input{:type => 'text', :name => 'q', :class => 'nav-box', :placeholder => 'Buscar: ejem. Emmanuel', :autofocus => ''}
+				-#%input{:type => 'submit', :value => 'Buscar', :class => 'nav-qbtn'}
+			.item
+				%a{:href => '/logout', :class => 'nav-btn2'} Cerrar Sesion
+	
+	%p{:class => 'msg'}
+		= @num
+		contactos registrados en la base de datos
+	%table{:class => 'table'}
+		%thead
+			%tr
+				%th
+					%a{:href => "/?order=nombre&by=#{alt}"} Nombre
+				%th
+					%a{:href => "/?order=apellido&by=#{alt}"} Apellido
+				%th
+					%a{:href => "/?order=telefono&by=#{alt}"} Telefono
+				%th Direccion
+				%th Acciones
+		%tbody
+			- @contacts.each do |contact|
+				%tr
+					%td= contact[:nombre]
+					%td= contact[:apellido]
+					%td= contact[:telefono]
+					%td= contact[:direccion]
+					%td
+						%a{:href => "/edit?id=#{contact[:id]}"}
+							%i{:class => 'foundicon-edit'} 
+							Editar
+						%a{:href => "/delete?id=#{contact[:id]}"}
+							%i{:class => 'foundicon-remove'}
+							Borrar

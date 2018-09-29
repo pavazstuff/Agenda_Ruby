@@ -1,0 +1,10 @@
+.login
+	%h2 Inicio de sesion
+	%form{:method => 'post'}
+		%label{:for => 'user', :class => 'login-lbl'} Usuario
+		%input{:type => 'text', :name => 'user', :id => 'user', :class => 'login-box', :autofocus => ''}
+
+		%label{:for => 'pass', :class => 'login-lbl'} Clave
+		%input{:type => 'password', :name => 'pass', :id => 'pass', :class => 'login-box'}
+
+		%input{:type => 'submit', :value => 'Acceder', :class => 'login-btn'}

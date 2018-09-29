@@ -1,0 +1,40 @@
+#contacts
+
+	%h2 Contactos
+	%form{:action => '/search', :class => 'form-q'}
+		.nav
+			.item
+				%a{:href => '/new', :class => 'nav-btn'} Nuevo
+			.item2
+				%input{:type => 'text', :name => 'q', :class => 'nav-box', :placeholder => 'Buscar: ejem. Emmanuel', :autofocus => ''}
+				-#%input{:type => 'submit', :value => 'Buscar', :class => 'nav-qbtn'}
+			.item
+				%a{:href => '/logout', :class => 'nav-btn2'} Cerrar Sesion
+	
+	%p{:class => 'msg'}
+		= @num
+		contacto(s) encontrados en la busqueda
+	%table{:class => 'table'}
+		%thead
+			%tr
+				%th Nombre
+				%th Apellido
+				%th Telefono
+				%th Direccion
+				%th Acciones
+		%tbody
+			- @contacts.each do |contact|
+				%tr
+					%td= contact[:nombre]
+					%td= contact[:apellido]
+					%td= contact[:telefono]
+					%td= contact[:direccion]
+					%td
+						%a{:href => "/edit?id=#{contact[:id]}"}
+							%i{:class => 'foundicon-edit'} 
+							Editar
+						%a{:href => "/delete?id=#{contact[:id]}"}
+							%i{:class => 'foundicon-remove'}
+							Borrar
+	%p 
+		%a{:href => '/'} Regresar al inicio

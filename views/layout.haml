@@ -1,0 +1,21 @@
+!!!
+%html
+	%head
+		%title Agenda
+		%meta{:charset => 'utf-8'}
+		%meta{:name => 'keywords', :content => 'agenda, contactos, direcctorio telefonico'}
+		%meta{:name => 'description', :content => 'Esta es una agenda hecha con ruby, sinatra y sqlite3'}
+		%meta{:name => 'author', :content => 'Paris Emmanuel Vazquez Venzor'}
+		%link{:href => '/css/main.css', :rel => 'stylesheet', :type => 'text/css'}
+		%link{:href => '/stylesheets/general_foundicons.css', :rel => 'stylesheet', :type => 'text/css'}
+	%body
+		.header
+			%h1 
+				Agenda 
+				%br Telefonica
+
+		.layer
+			.container= yield
+			.footer
+				%p
+					&copy; Perix Enterprise 2017.
